@@ -6,7 +6,8 @@ import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StudentViewComponent } from './student/student-view/student-view.component';
 import { StudentAddComponent } from './student/student-add/student-add.component';
-
+import { studentReducer } from './student/store/student/reducer/student.reducer';
+import { studentFeatureKey } from './student/store/student/reducer/student.reducer';
 @NgModule({
   declarations: [AppComponent, StudentViewComponent, StudentAddComponent],
   imports: [
@@ -16,6 +17,7 @@ import { StudentAddComponent } from './student/student-add/student-add.component
       maxAge: 25,
       logOnly: !isDevMode(),
     }),
+    StoreModule.forFeature(studentFeatureKey, studentReducer),
   ],
   providers: [],
   bootstrap: [AppComponent],

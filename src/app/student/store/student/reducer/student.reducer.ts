@@ -11,7 +11,7 @@ export const initialState: StudentState = {
   students: [],
 };
 
-export const reducer = createReducer(
+export const studentReducer = createReducer(
   initialState,
   on(StudentAction.addStudents, (state: StudentState, { student }) => ({
     ...state,

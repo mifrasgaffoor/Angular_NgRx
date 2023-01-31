@@ -1,5 +1,5 @@
 <p>student-view works!</p>
 
-<div *ngIf="let student of students$|async;">
-{{student.name}}
+<div *ngFor="let student of students$|async; let i = index">
+ <span>{{i+1}}</span>{{student.name}}
 </div>
